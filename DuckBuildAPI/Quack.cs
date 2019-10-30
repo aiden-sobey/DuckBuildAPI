@@ -1,12 +1,15 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace DuckBuildAPI
 {
     public class Quack
     {
-        public DateTime Date { get; }
+        [Key]
+        public int DuckId { get; set; }
 
-        public Guid DuckId { get; }
+        [DataType(DataType.DateTime)]
+        public DateTime Date { get; set; }
 
         public bool QuackStatus { get; set; }
     }
